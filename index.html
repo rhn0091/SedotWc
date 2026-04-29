@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sedot WC Putra Tangkas Semesta | Layanan Profesional & Terpercaya</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo1.png">
+  <link rel="shortcut icon" type="image/jpeg" href="logo1.png">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sedot WC Putra Tangkas Semesta",
+    "url": "https://www.sedotwcrayhan.com",
+    "logo": "https://www.sedotwcrayhan.com/logo1.png",
+    "image": "https://www.sedotwcrayhan.com/logo1.png",
+    "description": "Jasa sedot WC profesional, saluran mampet, dan limbah industri. Melayani berbagai kota di Jawa Timur.",
+    "telephone": "+6285748901055",
+    "email": "cs@sedotwcrayhan.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jawa Timur",
+      "addressRegion": "Jatim",
+      "addressCountry": "ID"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Gresik" }, { "@type": "City", "name": "Lamongan" }, { "@type": "City", "name": "Sidoarjo" },
+      { "@type": "City", "name": "Kediri" }, { "@type": "City", "name": "Mojokerto" }, { "@type": "City", "name": "Surabaya" },
+      { "@type": "City", "name": "Madura" }, { "@type": "City", "name": "Nganjuk" },
+      { "@type": "City", "name": "Bojonegoro" }, { "@type": "City", "name": "Tuban" }
+    ],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "Konsultasi via WA",
+    "sameAs": ["https://wa.me/6285748901055"]
+  }
+  </script>
+
+  <!-- Tailwind + AOS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Leaflet CSS & JS untuk peta interaktif -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-solid {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Canvas animasi partikel */
+    #particles-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .float-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 99;
+      background-color: #1e293b;
+      color: white;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background-color: #2563eb;
+      transform: translateY(-5px);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .stars {
+      color: #fbbf24;
+      letter-spacing: 2px;
+    }
+
+    .blink-green {
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Peta responsif */
+    #map {
+      height: 280px;
+      width: 100%;
+      border-radius: 1rem;
+      z-index: 1;
+    }
+
+    .leaflet-container {
+      border-radius: 1rem;
+    }
+
+    /* Mobile nav hidden by default */
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/6285748901055?text=Halo%20Putra%20Tangkas%20Semesta,%20saya%20butuh%20layanan%20sedot%20WC"
+    target="_blank" class="float-wa flex items-center justify-center w-12 h-12 md:w-14 md:h-16 shadow-xl z-50">
+    <i class="fab fa-whatsapp text-white text-2xl md:text-3xl"></i>
+  </a>
+
+  <!-- Scroll Top -->
+  <div class="scroll-top" id="scrollTopBtn">
+    <i class="fas fa-arrow-up text-lg"></i>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Lightbox">
+  </div>
+
+  <!-- Navbar with mobile hamburger -->
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-5">
+      <div class="flex items-center space-x-2 md:space-x-3">
+        <img src="logo1.png" alt="Logo" class="h-8 w-auto rounded-lg shadow-md"
+          onerror="this.src='https://placehold.co/160x60?text=Logo+PTS'">
+        <div class="flex flex-col">
+          <span class="font-bold text-sm md:text-xl tracking-tight text-blue-900 uppercase">Sedot WC Putra Tangkas
+            Semesta</span>
+          <span class="text-[8px] md:text-[10px] font-semibold text-slate-500 -mt-1">Profesional & Terpercaya</span>
+        </div>
+      </div>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
+        <a href="#about" class="text-slate-600 hover:text-blue-600 transition">Tentang</a>
+        <a href="#layanan" class="text-slate-600 hover:text-blue-600 transition">Layanan</a>
+        <a href="#galeri" class="text-slate-600 hover:text-blue-600 transition">Galeri</a>
+        <a href="#testimonial" class="text-slate-600 hover:text-blue-600 transition">Testimoni</a>
+        <a href="#faq" class="text-slate-600 hover:text-blue-600 transition">FAQ</a>
+        <a href="https://wa.me/6285748901055"
+          class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg text-sm">Pesan
+          Sekarang</a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile menu dropdown -->
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white/90 backdrop-blur-md border-t border-white/20 py-4 px-5">
+      <div class="flex flex-col space-y-3 text-sm font-semibold">
+        <a href="#about" class="text-slate-700 hover:text-blue-600 py-1">Tentang</a>
+        <a href="#layanan" class="text-slate-700 hover:text-blue-600 py-1">Layanan</a>
+        <a href="#galeri" class="text-slate-700 hover:text-blue-600 py-1">Galeri</a>
+        <a href="#testimonial" class="text-slate-700 hover:text-blue-600 py-1">Testimoni</a>
+        <a href="#faq" class="text-slate-700 hover:text-blue-600 py-1">FAQ</a>
+        <a href="https://wa.me/6285748901055"
+          class="bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700 transition mt-2">Pesan
+          Sekarang</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero dengan partikel -->
+  <header class="relative h-screen flex items-center justify-center overflow-hidden hero-solid">
+    <canvas id="particles-canvas"></canvas>
+    <div class="max-w-5xl px-5 text-center text-white relative z-10" data-aos="zoom-out">
+      <span
+        class="inline-block px-3 py-1 mb-4 text-[10px] md:text-xs font-bold tracking-widest uppercase bg-blue-600 rounded-full">Layanan
+        24 Jam Non-Stop</span>
+      <h1 class="text-3xl md:text-7xl font-extrabold mb-4 leading-tight">Solusi Kebersihan <br> <span
+          class="text-blue-300">Tanpa Bau, Tanpa Ragu.</span></h1>
+      <p class="text-sm md:text-xl mb-6 text-slate-100 max-w-2xl mx-auto font-light">Armada modern, tim profesional,
+        siap melayani Anda kapan saja.</p>
+      <!-- Status layanan & tombol lokasi -->
+      <div class="flex flex-col sm:flex-row justify-center gap-3 items-center">
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-3 py-1.5 text-xs md:text-sm">
+          <span class="w-2 h-2 bg-green-400 rounded-full blink-green"></span>
+          <span>Status: Aktif 24 Jam</span>
+        </div>
+        <button id="shareLocationBtn"
+          class="px-4 py-1.5 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur transition flex items-center gap-2 text-xs md:text-sm font-semibold">
+          <i class="fas fa-map-marker-alt"></i> Kirim Lokasi Saya
+        </button>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+        <a href="https://wa.me/6285748901055"
+          class="px-6 py-2.5 md:px-8 md:py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition transform hover:scale-105 shadow-xl text-sm md:text-base">Hubungi
+          WhatsApp</a>
+        <a href="#layanan"
+          class="px-6 py-2.5 md:px-8 md:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-xl border border-white/30 transition text-sm md:text-base">Lihat
+          Layanan</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Keunggulan -->
+    <section id="keunggulan" class="relative -mt-12 md:-mt-16 z-10 max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-blue-600 text-center"
+          data-aos="fade-up">
+          <div class="text-2xl md:text-3xl mb-2">⏱️</div>
+          <h3 class="font-bold text-sm md:text-lg mb-1">Fast Response</h3>
+          <p class="text-slate-500 text-xs">Tim siap < 1 jam</p>
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-green-500 text-center"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="text-2xl md:text-3xl mb-2">💎</div>
+          <h3 class="font-bold text-sm md:text-lg mb-1">Konsultasi Fair</h3>
+          <p class="text-slate-500 text-xs">Diskusi via WA</p>
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-orange-500 text-center"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="text-2xl md:text-3xl mb-2">🚜</div>
+          <h3 class="font-bold text-sm md:text-lg mb-1">Alat Modern</h3>
+          <p class="text-slate-500 text-xs">Daya hisap tinggi</p>
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-red-500 text-center" data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="text-2xl md:text-3xl mb-2">🛡️</div>
+          <h3 class="font-bold text-sm md:text-lg mb-1">Bergaransi</h3>
+          <p class="text-slate-500 text-xs">Kerja bersih & rapi</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="about" class="py-16 md:py-24 max-w-7xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+        <div class="md:w-1/2 relative" data-aos="fade-right">
+          <div class="absolute -top-4 -left-4 w-40 h-40 md:w-64 md:h-64 bg-blue-100 rounded-3xl -z-10"></div>
+          <img src="images13.jpeg" alt="Tentang Kami"
+            class="rounded-3xl shadow-2xl w-full object-cover h-[250px] md:h-[450px]">
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <h2 class="text-xs md:text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">Tentang Putra Tangkas
+            Semesta</h2>
+          <h3 class="text-2xl md:text-4xl font-bold mb-4 text-slate-900 leading-tight">Ahli Sanitasi & Kebersihan</h3>
+          <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Kami hadir untuk menjaga lingkungan Anda
+            tetap sehat. Dengan pengalaman bertahun-tahun, setiap pekerjaan ditangani secara profesional.</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center space-x-2 text-sm"><span
+                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Tenaga
+                ahli tersertifikasi</span></li>
+            <li class="flex items-center space-x-2 text-sm"><span
+                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Armada
+                bersih & selang panjang</span></li>
+            <li class="flex items-center space-x-2 text-sm"><span
+                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Respon
+                Cepat 24 Jam</span></li>
+            <li class="flex items-center space-x-2 text-sm"><span
+                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Harga
+                Transparan & Murah</span></li>
+            <li class="flex items-center space-x-2 text-sm"><span
+                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Bergaransi
+                & Profesional</span></li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Layanan (tanpa harga) -->
+    <section id="layanan" class="py-16 md:py-24 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <div class="text-center mb-10">
+          <h2 class="text-blue-400 font-bold tracking-widest uppercase mb-2 text-sm">Layanan Kami</h2>
+          <h3 class="text-2xl md:text-4xl font-bold">Pilih Layanan Anda</h3>
+          <p
+            class="text-slate-300 max-w-2xl mx-auto mt-3 text-xs md:text-sm bg-white/5 inline-block px-4 py-2 rounded-full">
+            💬 Hubungi CS via WA untuk informasi lebih lanjut & Konsultasi.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-blue-600 transition"
+            data-aos="fade-up">
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
+              🚽</div>
+            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot WC Rumah Tangga</h4>
+            <p class="text-slate-400 mb-4 text-sm">Pembersihan septic tank rumah tangga tuntas.</p>
+            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20WC%20Standar"
+              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition text-sm">Tanya
+              via WA</a>
+          </div>
+          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-green-600 transition"
+            data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 bg-green-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
+              🚿</div>
+            <h4 class="text-xl md:text-2xl font-bold mb-2">Pelancaran Saluran Mampet</h4>
+            <p class="text-slate-400 mb-4 text-sm">Solusi pipa tersumbat tanpa bongkar.</p>
+            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Saluran%20Mampet"
+              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-green-600 transition text-sm">Tanya
+              via WA</a>
+          </div>
+          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-orange-600 transition"
+            data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
+              🏭</div>
+            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot Limbah Industri</h4>
+            <p class="text-slate-400 mb-4 text-sm">Penanganan limbah cair pabrik & restoran.</p>
+            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Limbah%20Industri"
+              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition text-sm">Hubungi
+              Kami</a>
+          </div>
+          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-orange-600 transition group"
+            data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4"
+              aria-hidden="true">🍽️</div>
+            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot Limbah catering</h4>
+            <p class="text-slate-300 mb-4 text-sm">Penanganan limbah cair industri catering profesional & berizin.</p>
+            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20Limbah%20Ketring"
+              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition text-sm"
+              aria-label="Hubungi via WhatsApp untuk layanan Sedot Limbah catering">
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI 3 BAGIAN + PETA INTERAKTIF (tanpa before/after) -->
+    <section id="galeri" class="py-16 md:py-24 max-w-7xl mx-auto px-5">
+      <div class="text-center mb-10">
+        <h2 class="text-blue-600 font-bold uppercase tracking-wider mb-2 text-sm">Galeri & Layanan Premium</h2>
+        <h3 class="text-2xl md:text-4xl font-bold">Proses & Hasil Kerja</h3>
+      </div>
+
+      <!-- 1. FOTO UNIT -->
+      <div class="gallery-section mb-10" data-aos="fade-up">
+        <div class="text-center mb-3">
+          <h4 class="text-blue-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-blue-600">🚛 Unit Armada
+          </h4>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="gallery-img cursor-pointer" data-img="images3.jpeg"><img src="images3.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images7.jpeg"><img src="images7.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images8.jpeg"><img src="images8.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images9.jpeg"><img src="images9.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images11.jpeg"><img src="images11.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+        </div>
+      </div>
+
+      <!-- 2. FOTO PEMBUANGAN -->
+      <div class="gallery-section mb-10" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center mb-3">
+          <h4 class="text-red-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-red-600">📸
+            Pembuangan Resmi</h4>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="gallery-img cursor-pointer" data-img="images1.jpeg"><img src="images1.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images2.jpeg"><img src="images2.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+        </div>
+      </div>
+
+      <!-- 3. FOTO KERJAAN -->
+      <div class="gallery-section mb-10" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center mb-3">
+          <h4 class="text-green-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-green-600">🔧
+            Eksekusi Pengerjaan</h4>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="gallery-img cursor-pointer" data-img="images4.jpeg"><img src="images4.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images5.jpeg"><img src="images5.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images6.jpeg"><img src="images6.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+          <div class="gallery-img cursor-pointer" data-img="images10.jpeg"><img src="images10.jpeg"
+              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+        </div>
+      </div>
+
+      <!-- PETA INTERAKTIF WILAYAH LAYANAN -->
+      <div class="mt-12 md:mt-20" data-aos="fade-up">
+        <div class="text-center mb-4">
+          <h4 class="text-xl md:text-2xl font-bold text-slate-800">🌍 Jangkauan Layanan Kami</h4>
+          <p class="text-slate-500 text-xs md:text-sm">Klik marker untuk melihat kota yang kami layani</p>
+        </div>
+        <div id="map"></div>
+        <p class="text-xs text-center text-slate-400 mt-2">11 kota di Jawa Timur menjadi area operasional kami.</p>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section id="testimonial" class="py-16 md:py-24 bg-blue-50">
+      <div class="max-w-7xl mx-auto px-5 text-center">
+        <h2 class="text-blue-600 font-bold uppercase mb-2 text-sm">Testimoni Pelanggan</h2>
+        <h3 class="text-2xl md:text-4xl font-bold mb-8">Apa Kata Mereka?</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Pelayanan cepat, tim ramah, hasil bersih total."</p>
+            <h4 class="font-bold mt-4 text-sm">— Budi Santoso</h4>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Profesional, tepat waktu, dan sangat membantu."</p>
+            <h4 class="font-bold mt-4 text-sm">— Siti Aisyah</h4>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Saluran mampet langsung lancar, puas banget!"</p>
+            <h4 class="font-bold mt-4 text-sm">— Bambang Saipul</h4>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Pengerjaan nya Cepat dan Efisiean!"</p>
+            <h4 class="font-bold mt-4 text-sm">— Wahyu</h4>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Pelayanan cepat, tepat waktu, dan petugas sangat profesional. Masalah WC mampet dan penuh langsung beres tanpa berantakan."</p>
+            <h4 class="font-bold mt-4 text-sm">— Bapak Hendra</h4>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <div class="stars mb-2 text-sm">★★★★★</div>
+            <p class="italic text-sm">"Sudah dua kali menggunakan jasa ini. Hasilnya memuaskan, limbah tersedot bersih hingga ke septic tank. Harga transparan, tidak ada biaya tersembunyi. Sangat direkomendasikan."</p>
+            <h4 class="font-bold mt-4 text-sm">— Ibu Rina</h4>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-24 max-w-4xl mx-auto px-5">
+      <div class="text-center mb-8">
+        <h2 class="text-blue-600 font-bold uppercase text-sm">FAQ</h2>
+        <h3 class="text-2xl md:text-4xl font-bold">Punya Pertanyaan?</h3>
+      </div>
+      <div class="space-y-3">
+        <div class="bg-white p-5 rounded-2xl shadow">
+          <h4 class="font-bold text-md">Apakah melayani luar kota?</h4>
+          <p class="text-slate-500 mt-1 text-sm">Ya, untuk kota-kota di Jawa Timur. Silakan hubungi WA untuk konfirmasi.
+          </p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl shadow">
+          <h4 class="font-bold text-md">Bagaimana cara pesan?</h4>
+          <p class="text-slate-500 mt-1 text-sm">Langsung klik tombol WhatsApp di pojok kanan bawah.</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl shadow">
+          <h4 class="font-bold text-md">Apakah ada biaya survey?</h4>
+          <p class="text-slate-500 mt-1 text-sm">Tidak, konsultasi dan Konsultasi via WA gratis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-white py-10 md:py-20">
+    <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h5 class="text-xl md:text-2xl font-bold mb-4 text-blue-400">Sedot WC Putra Tangkas Semesta</h5>
+        <p class="text-slate-400 text-sm">Layanan sanitasi terpercaya untuk rumah tangga dan industri. Harga fleksibel
+          dan Transparan serta konsultasi Gratis via WhatsApp.</p>
+      </div>
+      <div>
+        <h5 class="font-bold mb-4 uppercase tracking-widest text-sm">Akses Cepat</h5>
+        <ul class="space-y-2 text-slate-400 text-sm">
+          <li><a href="#about" class="hover:text-white transition">Tentang Kami</a></li>
+          <li><a href="#layanan" class="hover:text-white transition">Layanan & Konsultasi</a></li>
+          <li><a href="#galeri" class="hover:text-white transition">Galeri Kerja</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold mb-4 uppercase tracking-widest text-sm">Kontak Konsultasi</h5>
+        <a href="tel:085748901055"
+          class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-green-400"><span>📞</span><span>0857-4890-1055</span></a>
+        <p class="text-slate-400 text-sm mt-2 italic">Buka 24 Jam - Chat WA untuk Konsultasi</p>
+        <a href="https://wa.me/6285748901055"
+          class="inline-block mt-3 bg-green-600 px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-green-700 transition">💬
+          Mulai Konsultasi di WhatsApp</a>
+      </div>
+    </div>
+    <div class="text-center pt-6 border-t border-white/5 text-slate-500 text-xs tracking-widest uppercase">&copy;2018 - 2026
+      Sedot WC Putra Tangkas Semesta | CS siap Konsultasi.</div>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Scroll top
+    window.onscroll = function () {
+      let scrollBtn = document.getElementById('scrollTopBtn');
+      if (window.scrollY > 500) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
+    };
+    document.getElementById('scrollTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-img').forEach(el => {
+      el.addEventListener('click', () => { lightboxImg.src = el.getAttribute('data-img'); lightbox.style.display = 'flex'; });
+    });
+    document.querySelector('.close-lightbox').addEventListener('click', () => lightbox.style.display = 'none');
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.style.display = 'none'; });
+
+    // Peta interaktif
+    const cities = [
+      { name: "Gresik", lat: -7.1563, lon: 112.6535 }, { name: "Lamongan", lat: -7.1167, lon: 112.4167 },
+      { name: "Sidoarjo", lat: -7.4531, lon: 112.7167 }, { name: "Kediri", lat: -7.8167, lon: 112.0167 },
+      { name: "Mojokerto", lat: -7.4704747, lon: 112.4401329 }, { name: "Surabaya", lat: -7.2575, lon: 112.7521 },
+      { name: "Madura", lat: -7.0167, lon: 113.3333 }, { name: "Nganjuk", lat: -7.6, lon: 111.9 },
+      { name: "Bojonegoro", lat: -7.15, lon: 111.8833 },
+      { name: "Tuban", lat: -6.9, lon: 112.05 }
+    ];
+    const map = L.map('map').setView([-7.5, 112.5], 8);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB'
+    }).addTo(map);
+    cities.forEach(city => {
+      L.marker([city.lat, city.lon]).addTo(map).bindPopup(`<b>${city.name}</b><br>Kami melayani kota ini. Hubungi WA untuk info lebih lanjut.`);
+    });
+
+    // Partikel canvas Hero
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    for (let i = 0; i < 60; i++) {
+      particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 2.5 + 1, speedX: (Math.random() - 0.5) * 0.4, speedY: (Math.random() - 0.5) * 0.2 });
+    }
+    function animateParticles() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Tombol Kirim Lokasi Saya (WhatsApp)
+    document.getElementById('shareLocationBtn').addEventListener('click', function () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const mapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
+          const waMsg = `Halo Putra Tangkas Semesta, saya butuh bantuan. Lokasi saya: ${mapsLink}. Mohon info layanan & Konsultasi.`;
+          window.open(`https://wa.me/6285748901055?text=${encodeURIComponent(waMsg)}`, '_blank');
+        }, function () {
+          alert("Gagal mendapatkan lokasi. Izinkan akses lokasi atau kirim manual via WA.");
+        });
+      } else {
+        alert("Browser tidak mendukung geolokasi. Silakan kirim lokasi manual.");
+      }
+    });
+  </script>
+</body>
+
+</html>
