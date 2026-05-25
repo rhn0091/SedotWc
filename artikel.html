@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Kumpulan artikel lengkap tentang sedot WC, perawatan septic tank, mengatasi saluran mampet, dan tips kebersihan rumah tangga dari Putra Tangkas Semesta.">
+    <title>Artikel & Tips - Sedot WC Putra Tangkas Semesta</title>
+    <link rel="icon" type="image/jpeg" href="logo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background-color: #ffffffdd;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #25D366;
+            border-radius: 9999px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99;
+            background-color: #334155;
+            color: white;
+            border-radius: 9999px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            transition: all 0.2s ease;
+        }
+
+        .prose-custom p {
+            margin-bottom: 1.2em;
+            line-height: 1.7;
+        }
+
+        .prose-custom h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.5em 0 0.5em;
+        }
+
+        .prose-custom ul,
+        .prose-custom ol {
+            margin: 1em 0 1em 1.5em;
+        }
+
+        .prose-custom li {
+            margin-bottom: 0.3em;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+    <a href="https://wa.me/6285748901055?text=Halo%20Putra%20Tangkas%20Semesta,%20saya%20butuh%20layanan%20sedot%20WC"
+        target="_blank" class="float-wa flex items-center justify-center w-12 h-12 shadow-md z-50">
+        <i class="fab fa-whatsapp text-white text-xl"></i>
+    </a>
+
+    <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up text-sm"></i></div>
+
+    <nav class="navbar fixed top-0 left-0 w-full z-50 transition-all duration-200">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-5">
+            <div class="flex items-center space-x-2 md:space-x-3">
+                <img src="logo1.png" alt="Logo" class="h-8 w-auto rounded-md shadow-sm"
+                    onerror="this.src='https://placehold.co/160x60?text=Logo+PTS'">
+                <div><span class="font-bold text-sm md:text-lg tracking-tight text-slate-800">Sedot WC Putra Tangkas
+                        Semesta</span><span
+                        class="text-[9px] md:text-[10px] font-medium text-slate-500 block -mt-0.5">Profesional &
+                        Terpercaya</span></div>
+            </div>
+            <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
+                <a href="index.html" class="text-slate-700 hover:text-teal-600 transition">Beranda</a>
+                <a href="tentang.html" class="text-slate-700 hover:text-teal-600 transition">Tentang</a>
+                <a href="layanan.html" class="text-slate-700 hover:text-teal-600 transition">Layanan</a>
+                <a href="galeri.html" class="text-slate-700 hover:text-teal-600 transition">Galeri</a>
+                <a href="testimonial.html" class="text-slate-700 hover:text-teal-600 transition">Testimoni</a>
+                <a href="artikel.html" class="text-teal-600 font-semibold">Artikel</a>
+                <a href="faq.html" class="text-slate-700 hover:text-teal-600 transition">FAQ</a>
+                <a href="https://wa.me/6285748901055"
+                    class="bg-teal-600 text-white px-4 py-1.5 rounded-full hover:bg-teal-700 transition text-sm shadow-sm">Hubungi
+                    WA</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-slate-700 focus:outline-none text-xl"><i
+                    class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white/95 border-t border-slate-100 py-3 px-5 shadow-md">
+            <div class="flex flex-col space-y-2 text-sm font-medium">
+                <a href="index.html" class="text-slate-700 hover:text-teal-600 py-1">Beranda</a>
+                <a href="tentang.html" class="text-slate-700 hover:text-teal-600 py-1">Tentang</a>
+                <a href="layanan.html" class="text-slate-700 hover:text-teal-600 py-1">Layanan</a>
+                <a href="galeri.html" class="text-slate-700 hover:text-teal-600 py-1">Galeri</a>
+                <a href="testimonial.html" class="text-slate-700 hover:text-teal-600 py-1">Testimoni</a>
+                <a href="artikel.html" class="text-teal-600 font-semibold py-1">Artikel</a>
+                <a href="faq.html" class="text-slate-700 hover:text-teal-600 py-1">FAQ</a>
+                <a href="https://wa.me/6285748901055"
+                    class="bg-teal-600 text-white text-center px-4 py-1.5 rounded-full hover:bg-teal-700 transition mt-1">Hubungi
+                    WA</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-32 max-w-7xl mx-auto px-5 py-16">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-teal-600 font-semibold uppercase tracking-wide text-sm">Blog & Artikel</h2>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mt-2">Tips & Informasi Seputar Sedot WC</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto mt-3">Temukan berbagai artikel berguna tentang perawatan septic
+                tank, mengatasi saluran mampet, dan menjaga kebersihan rumah Anda.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articleList" data-aos="fade-up" data-aos-delay="100">
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h5 class="text-lg font-bold mb-3 text-teal-400">Sedot WC Putra Tangkas Semesta</h5>
+                <p class="text-slate-400 text-sm">Layanan sanitasi terpercaya untuk rumah tangga dan industri. Harga
+                    fleksibel, transparan, konsultasi gratis via WhatsApp.</p>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3 uppercase tracking-wide text-sm text-slate-300">Akses Cepat</h5>
+                <ul class="space-y-1 text-slate-400 text-sm">
+                    <li><a href="tentang.html" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="layanan.html" class="hover:text-white transition">Layanan & Konsultasi</a></li>
+                    <li><a href="galeri.html" class="hover:text-white transition">Galeri Kerja</a></li>
+                    <li><a href="artikel.html" class="hover:text-white transition">Artikel & Tips</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3 uppercase tracking-wide text-sm text-slate-300">Kontak Konsultasi</h5><a
+                    href="tel:085748901055"
+                    class="flex items-center space-x-2 text-lg font-semibold text-teal-400"><span>📞</span><span>0857-4890-1055</span></a>
+                <p class="text-slate-400 text-sm mt-1 italic">Buka 24 Jam - Chat WA untuk Konsultasi</p><a
+                    href="https://wa.me/6285748901055"
+                    class="inline-block mt-3 bg-teal-600 px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-teal-500 transition">💬
+                    Mulai Konsultasi</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-5 border-t border-slate-800 pt-6 mt-6 text-center">
+            <p class="text-slate-500 text-xs uppercase tracking-wide">Wilayah Layanan</p>
+            <p class="text-slate-400 text-xs mt-1">Gresik | Lamongan | Sidoarjo | Surabaya | Kediri | Mojokerto |
+                Nganjuk | Bojonegoro | Tuban | Madura</p>
+        </div>
+        <div class="text-center pt-5 text-slate-500 text-xs">&copy;2018 - 2026 Sedot WC Putra Tangkas Semesta | CS siap
+            konsultasi.</div>
+    </footer>
+
+    <script>
+        const articles = [
+            {
+                id: 1,
+                title: "Manfaat Rutin Sedot WC Setiap 2-3 Tahun",
+                excerpt: "Menjaga septic tank tetap sehat, mencegah pencemaran lingkungan, dan menghemat biaya perbaikan jangka panjang.",
+                content: `
+          <p>Banyak pemilik rumah mengabaikan perawatan septic tank hingga terjadi masalah seperti WC mampet, air kotor meluap, atau bau tidak sedap. Padahal, melakukan sedot WC secara rutin setiap 2-3 tahun memiliki banyak manfaat penting. Berikut adalah alasan mengapa Anda tidak boleh melewatkan jadwal sedot WC berkala.</p>
+          <h2>1. Mencegah Pencemaran Tanah dan Air Sumur</h2>
+          <p>Septic tank yang penuh menyebabkan limbah cair tidak terurai sempurna dan meresap ke tanah di sekitarnya. Hal ini bisa mencemari sumber air tanah, terutama jika Anda menggunakan sumur untuk kebutuhan sehari-hari. Bakteri E. Coli dan patogen berbahaya lainnya dapat masuk ke dalam air minum dan menyebabkan penyakit diare, tifus, atau gangguan pencernaan lainnya.</p>
+          <h2>2. Menghindari Biaya Perbaikan yang Mahal</h2>
+          <p>Jika septic tank dibiarkan penuh hingga meluap atau pipa saluran tersumbat total, biaya perbaikannya bisa jauh lebih besar dibandingkan biaya sedot WC rutin. Kerusakan pada sistem resapan bisa memerlukan penggalian ulang dan instalasi baru, yang memakan biaya puluhan juta rupiah.</p>
+          <h2>3. Menjaga Kesehatan Keluarga</h2>
+          <p>Limbah yang tidak dikelola dengan baik menjadi sarang lalat, kecoa, dan tikus. Bau menyengat juga dapat memicu gangguan pernapasan. Dengan septic tank bersih, lingkungan rumah menjadi lebih sehat dan nyaman.</p>
+          <h2>4. Memperpanjang Umur Septic Tank</h2>
+          <p>Septic tank yang dirawat dengan sedot rutin dan tidak kelebihan beban dapat bertahan hingga 15-20 tahun. Sebaliknya, tank yang jarang disedot akan cepat rusak karena endapan padat menumpuk dan menyumbat saluran resapan.</p>
+          <p><strong>Kesimpulan:</strong> Sedot WC bukan hanya tentang membersihkan, tetapi investasi kesehatan dan kenyamanan jangka panjang. Putra Tangkas Semesta siap membantu Anda dengan armada modern dan harga terjangkau. Konsultasi gratis via WhatsApp.</p>
+        `,
+                image: "https://picsum.photos/id/20/400/250",
+                date: "2025-05-15",
+                author: "Tim Putra Tangkas"
+            },
+            {
+                id: 2,
+                title: "5 Tanda Septic Tank Anda Sudah Penuh",
+                excerpt: "Kenali gejala awal septic tank penuh sebelum menjadi masalah besar. Jangan tunggu sampai meluap!",
+                content: `
+          <p>Septic tank yang sudah penuh tidak selalu langsung terlihat dari luar. Namun ada beberapa tanda yang bisa Anda perhatikan sebagai alarm peringatan. Jika Anda mengalami salah satu atau beberapa tanda berikut, segera hubungi jasa sedot WC profesional.</p>
+          <h2>1. WC Sering Mampet atau Air Lambat Turun</h2>
+          <p>Ketika septic tank penuh, limbah cair tidak memiliki ruang untuk mengalir. Akibatnya, air di toilet atau wastafel akan terlihat lambat surut atau bahkan berhenti sama sekali. Ini adalah indikasi paling umum.</p>
+          <h2>2. Bau Tidak Sedap dari Saluran Pembuangan</h2>
+          <p>Gas metana dan hidrogen sulfida (bau busuk telur) mulai keluar dari lubang saluran karena proses pembusukan tidak berjalan sempurna. Bau ini sangat mengganggu dan bisa menyebar ke seluruh rumah.</p>
+          <h2>3. Lantai di Sekitar Toilet Lembab atau Basah</h2>
+          <p>Septic tank yang penuh dapat menyebabkan rembesan air limbah ke permukaan tanah. Lantai keramik di kamar mandi atau area sekitar tangki menjadi lembab, bahkan muncul genangan air kecil.</p>
+          <h2>4. Lubang Resapan (Septik) Mengeluarkan Genangan</h2>
+          <p>Jika Anda memiliki lubang kontrol atau tutup septic tank, perhatikan apakah ada air yang keluar atau tanah di sekitarnya becek. Ini pertanda tangki sudah overload.</p>
+          <h2>5. Rumput di Atas Septic Tank Tumbuh Lebih Subur</h2>
+          <p>Percaya atau tidak, rumput atau tanaman di atas area septic tank akan tumbuh sangat hijau dan subur karena mendapat 'nutrisi' dari limbah yang merembes. Tanda ini sering diabaikan padahal cukup akurat.</p>
+          <p>Jika Anda merasakan salah satu tanda di atas, jangan tunda. Segera konsultasikan dengan tim Putra Tangkas Semesta melalui WhatsApp. Kami siap datang cepat untuk mengecek kondisi septic tank Anda.</p>
+        `,
+                image: "https://picsum.photos/id/130/400/250",
+                date: "2025-04-02",
+                author: "Tim Ahli Sanitasi"
+            },
+            {
+                id: 3,
+                title: "Cara Mengatasi Saluran Air Mampet Tanpa Bongkar",
+                excerpt: "Saluran mampet di dapur atau kamar mandi bisa diatasi dengan trik sederhana. Pelajari langkah-langkahnya sebelum memanggil teknisi.",
+                content: `
+          <p>Saluran air yang mampet seringkali disebabkan oleh penumpukan lemak, rambut, sisa sabun, atau kotoran lain. Sebelum memanggil jasa profesional, Anda bisa mencoba beberapa metode sederhana berikut. Namun ingat, jika cara ini tidak berhasil, segera hubungi ahli karena mencegah kerusakan lebih parah.</p>
+          <h2>1. Gunakan Air Panas (Bukan Mendidih)</h2>
+          <p>Tuangkan air panas (suhu sekitar 60-70°C) perlahan ke saluran yang mampet. Air panas efektif melumerkan lemak dan sabun yang mengeras. Jangan menggunakan air mendidih karena bisa merusak pipa PVC.</p>
+          <h2>2. Campuran Baking Soda dan Cuka</h2>
+          <p>Masukkan setengah cangkir baking soda ke lubang saluran, lalu tuang setengah cangkir cuka putih. Tutup lubang dengan lap atau sumbat selama 15 menit. Reaksi kimia akan mengangkat kotoran. Setelah itu, siram dengan air panas. Ulangi jika perlu.</p>
+          <h2>3. Gunakan Plunger (Sedot WC Manual)</h2>
+          <p>Pastikan ada cukup air di wastafel atau kloset untuk merendam karet plunger. Tekan dan tarik dengan gerakan cepat beberapa kali. Tekanan udara akan mendorong sumbatan. Teknik ini sangat efektif untuk sumbatan padat.</p>
+          <h2>4. Sikat Pipa Fleksibel (Snake/ Auger)</h2>
+          <p>Anda bisa membeli alat snake sederhana di toko perlengkapan rumah. Masukkan ujung snake ke dalam pipa dan putar perlahan untuk menjangkau sumbatan yang lebih dalam. Tarik keluar kotoran yang menempel.</p>
+          <h2>5. Jika Semua Gagal, Panggil Profesional</h2>
+          <p>Jika setelah mencoba cara di atas saluran masih mampet, jangan memaksakan diri dengan bahan kimia keras yang bisa merusak pipa. Kami di Putra Tangkas Semesta memiliki peralatan modern untuk pelancaran saluran tanpa bongkar, cepat dan bersih. Hubungi kami kapan saja 24 jam.</p>
+        `,
+                image: "https://picsum.photos/id/25/400/250",
+                date: "2025-03-20",
+                author: "Teknisi Berpengalaman"
+            },
+            {
+                id: 4,
+                title: "Perbedaan Sedot WC Konvensional vs Modern",
+                excerpt: "Teknologi sedot WC berkembang pesat. Kenali kelebihan armada modern yang kami gunakan dibanding metode lama.",
+                content: `
+          <p>Dulu, sedot WC dilakukan dengan pompa sederhana yang dayanya kecil dan hasilnya kurang maksimal. Kini, dengan armada vacuum tank bertekanan tinggi, proses menjadi lebih bersih, cepat, dan ramah lingkungan. Berikut perbandingannya:</p>
+          <h2>Sedot WC Konvensional</h2>
+          <ul>
+            <li>Daya hisap lemah (sekitar 100-150 HP) → limbah tidak tersedot total.</li>
+            <li>Selang pendek (maksimal 10 meter) → sulit menjangkau septic tank yang jauh dari jalan.</li>
+            <li>Waktu pengerjaan lama (bisa >1 jam per tangki).</li>
+            <li>Sering berantakan, limbah berceceran di sekitar area kerja.</li>
+            <li>Tidak ada sistem pembuangan resmi, limbah sering dibuang sembarangan.</li>
+          </ul>
+          <h2>Sedot WC Modern (Armada Putra Tangkas Semesta)</h2>
+          <ul>
+            <li>Daya hisap sangat kuat (turbo vacuum 300+ HP) → limbah tersedot bersih hingga dasar tangki.</li>
+            <li>Selang panjang hingga 50 meter, fleksibel menjangkau berbagai lokasi.</li>
+            <li>Pengerjaan cepat (rata-rata 20-30 menit per septic tank).</li>
+            <li>Sistem penyedotan kedap udara, tidak ada tumpahan atau bau menyengat.</li>
+            <li>Limbah dibuang di IPAL resmi sesuai regulasi lingkungan, tidak mencemari.</li>
+          </ul>
+          <p>Putra Tangkas Semesta selalu menggunakan armada modern terbaru untuk kenyamanan Anda. Kami juga memberikan garansi kebersihan setelah pengerjaan. Jangan ragu memilih yang terbaik untuk kesehatan keluarga Anda.</p>
+        `,
+                image: "https://picsum.photos/id/27/400/250",
+                date: "2025-02-10",
+                author: "Manajemen Operasional"
+            },
+            {
+                id: 5,
+                title: "Biaya Sedot WC: Apa Saja yang Mempengaruhi Harga?",
+                excerpt: "Harga sedot WC bervariasi. Pahami faktor-faktor penentu biaya agar Anda mendapat layanan terbaik tanpa biaya tersembunyi.",
+                content: `
+          <p>Banyak pelanggan bertanya tentang kisaran harga sedot WC. Sebagai informasi, tidak ada harga mati karena setiap proyek memiliki kondisi berbeda. Berikut faktor-faktor yang mempengaruhi biaya:</p>
+          <h2>1. Volume Limbah (Ukuran Septic Tank)</h2>
+          <p>Semakin besar volume septic tank, semakin banyak waktu dan tenaga yang dibutuhkan. Standar rumah tangga biasanya 2-3 meter kubik, namun untuk industri bisa puluhan kubik. Harga akan disesuaikan dengan volume yang disedot.</p>
+          <h2>2. Akses Lokasi</h2>
+          <p>Apakah armada truk dapat masuk langsung ke halaman rumah atau perlu selang panjang? Lokasi yang sempit atau jauh dari jalan raya memerlukan selang ekstra dan tenaga lebih, sehingga ada tambahan biaya operasional.</p>
+          <h2>3. Jarak dari Pangkalan</h2>
+          <p>Untuk pelanggan di luar kota seperti Lamongan, Bojonegoro, atau Madura, biaya transportasi sedikit lebih tinggi karena jarak tempuh. Namun kami tetap berusaha memberikan harga paling bersahabat.</p>
+          <h2>4. Layanan Tambahan</h2>
+          <p>Jika Anda juga memerlukan pelancaran saluran mampet, desinfeksi area setelah sedot, atau pembersihan grease trap, akan ada biaya terpisah yang tetap transparan.</p>
+          <h2>5. Waktu Pengerjaan (Darurat vs Jadwal Normal)</h2>
+          <p>Untuk panggilan tengah malam atau hari libur besar, mungkin ada biaya lembur, namun kami selalu mengutamakan kepuasan pelanggan dengan tarif yang tetap wajar.</p>
+          <p><strong>Yang terpenting:</strong> Kami selalu memberikan penawaran harga di awal melalui WhatsApp tanpa biaya survey. Tidak ada biaya tersembunyi. Jadi Anda bisa memutuskan dengan tenang. Hubungi kami sekarang untuk konsultasi gratis!</p>
+        `,
+                image: "https://picsum.photos/id/29/400/250",
+                date: "2025-01-05",
+                author: "Tim Customer Care"
+            },
+            {
+                id: 6,
+                title: "Tips Memilih Jasa Sedot WC Terpercaya",
+                excerpt: "Jangan asal pilih! Simak panduan memilih penyedia jasa sedot WC yang profesional dan bertanggung jawab agar tidak tertipu.",
+                content: `
+          <p>Maraknya jasa sedot WC abal-abal yang hanya menguras uang tanpa hasil memuaskan membuat banyak orang ragu. Berikut tips memilih jasa yang benar-benar profesional:</p>
+          <h2>1. Pastikan Memiliki Armada yang Terawat dan Label Jelas</h2>
+          <p>Jasa bonafit biasanya memiliki truk tangki dengan merek dan nomor kontak yang tertera. Hindari armada yang hanya menggunakan mobil bak terbuka atau pompa sederhana karena daya hisapnya lemah.</p>
+          <h2>2. Cek Testimoni Pelanggan Asli</h2>
+          <p>Lihat ulasan di Google Maps, media sosial, atau website. Testimoni dengan foto atau nama jelas lebih kredibel daripada hanya bintang lima tanpa deskripsi.</p>
+          <h2>3. Jangan Tergiur Harga Murah tanpa Garansi</h2>
+          <p>Harga terlalu murah (misal 200 ribuan) biasanya tidak masuk akal karena biaya operasional sudah puluhan liter BBM. Mereka bisa jadi hanya menyedot permukaan saja, sehingga septic tank cepat penuh lagi. Pilih yang memberikan garansi pekerjaan.</p>
+          <h2>4. Pilih yang Melayani 24 Jam untuk Keadaan Darurat</h2>
+          <p>Masalah WC mampet atau meluap tidak kenal waktu. Jasa dengan layanan 24 jam menunjukkan keseriusan dan kesiapan mereka membantu pelanggan kapan saja.</p>
+          <h2>5. Tanyakan Proses Pembuangan Limbah</h2>
+          <p>Jasa bertanggung jawab harus membuang limbah ke IPAL (Instalasi Pengolahan Air Limbah) resmi, bukan ke sungai atau selokan. Tanyakan hal ini sebelum memesan.</p>
+          <p>Putra Tangkas Semesta memenuhi semua kriteria di atas. Kami melayani 24 jam, armada modern, harga transparan, dan memiliki izin resmi pembuangan limbah. Percayakan pada ahlinya!</p>
+        `,
+                image: "https://picsum.photos/id/32/400/250",
+                date: "2024-12-18",
+                author: "Redaksi"
+            },
+            {
+                id: 7,
+                title: "Dampak Septic Tank Penuh pada Lingkungan",
+                excerpt: "Limbah yang tidak dikelola dengan baik dapat mencemari sumber air tanah. Pelajari bahayanya bagi kesehatan dan ekosistem sekitar.",
+                content: `
+          <p>Septic tank yang meluap atau tidak pernah disedot bukan hanya masalah bau dan estetika, tetapi juga ancaman serius bagi lingkungan dan kesehatan masyarakat. Berikut dampak negatif yang bisa terjadi:</p>
+          <h2>1. Kontaminasi Bakteri E.Coli ke Sumur Warga</h2>
+          <p>Limbah tinja mengandung bakteri patogen seperti E. Coli dan Salmonella. Jika septic tank merembes, bakteri ini dapat mencemari air tanah yang digunakan untuk minum, memasak, dan mandi. Penyakit diare, tifus, dan kolera bisa mewabah.</p>
+          <h2>2. Pencemaran Sungai dan Irigasi</h2>
+          <p>Di daerah padat penduduk, air limbah yang tidak terserap tanah akan mengalir ke saluran drainase dan berakhir di sungai. Ini membunuh biota air dan membuat air sungai beracun bagi pertanian.</p>
+          <h2>3. Bau Tak Sedap yang Mengganggu Kenyamanan Tetangga</h2>
+          <p>Gas metana dan hidrogen sulfida tidak hanya busuk tetapi juga mudah terbakar. Bau yang menyengat menurunkan kualitas hidup warga sekitar.</p>
+          <h2>4. Menyebarkan Vektor Penyakit</h2>
+          <p>Lalat, kecoa, dan tikus tertarik pada limbah yang terbuka. Mereka bisa membawa kuman dari septic tank ke dapur atau makanan Anda.</p>
+          <h2>5. Kerusakan Infrastruktur Tanah</h2>
+          <p>Rembesan limbah terus-menerus membuat tanah menjadi lunak dan tidak stabil. Dalam kasus ekstrem, bisa menyebabkan amblesan atau keretakan pondasi bangunan.</p>
+          <p>Sebagai warga yang bertanggung jawab, lakukan sedot WC rutin minimal 2 tahun sekali dan pastikan limbah dibuang di tempat yang benar. Putra Tangkas Semesta berkomitmen menjaga lingkungan dengan proses pembuangan ramah lingkungan.</p>
+        `,
+                image: "https://picsum.photos/id/33/400/250",
+                date: "2024-11-01",
+                author: "Pegiat Lingkungan"
+            },
+            {
+                id: 8,
+                title: "Perawatan Septic Tank Agar Awet dan Tidak Cepat Penuh",
+                excerpt: "Selain rutin sedot, ada kebiasaan sederhana yang bisa memperpanjang umur septic tank. Simak tips berikut.",
+                content: `
+          <p>Agar septic tank Anda tidak cepat penuh dan awet hingga puluhan tahun, lakukan kebiasaan-kebiasaan baik berikut ini:</p>
+          <h2>1. Jangan Buang Sampah Keras ke Toilet</h2>
+          <p>Tisu basah, pembalut, popok, kapas, dan puntung rokok tidak bisa terurai di septic tank dan akan menyumbat saluran. Sediakan tempat sampah di kamar mandi.</p>
+          <h2>2. Batasi Penggunaan Deterjen dan Sabun Kimia Keras</h2>
+          <p>Bahan kimia berlebihan membunuh bakteri pengurai alami di dalam septic tank. Gunakan sabun yang ramah lingkungan atau dengan kadar surfaktan rendah.</p>
+          <h2>3. Pisahkan Saluran Air Dapur dari Septic Tank</h2>
+          <p>Lemak dan minyak dari dapur jika masuk ke septic tank akan membentuk lapisan keras yang menyumbat. Pasang grease trap (perangkap lemak) dan alirkan air dapur ke saluran terpisah atau bak kontrol.</p>
+          <h2>4. Jangan Tanam Pohon dengan Akar Besar di Dekat Tangki</h2>
+          <p>Akar pohon besar (beringin, bambu, dll) dapat merusak dinding septic tank dan pipa saluran. Beri jarak minimal 3 meter.</p>
+          <h2>5. Jadwalkan Sedot WC Secara Berkala</h2>
+          <p>Berdasarkan jumlah penghuni rumah, lakukan sedot setiap 2-3 tahun. Jangan menunggu sampai penuh atau meluap. Dengan perawatan rutin, septic tank bisa bertahan 15-20 tahun.</p>
+          <p>Putra Tangkas Semesta siap membantu Anda dengan layanan sedot WC profesional. Hubungi kami untuk konsultasi gratis dan jadwalkan perawatan septic tank Anda sekarang.</p>
+        `,
+                image: "https://picsum.photos/id/42/400/250",
+                date: "2024-09-20",
+                author: "Ahli Perawatan Rumah"
+            }
+        ];
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
+        }
+
+        function renderArticleList() {
+            const container = document.getElementById('articleList');
+            if (!container) return;
+            container.innerHTML = articles.map(article => `
+        <div class="article-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer" onclick="window.location.href='?id=${article.id}'">
+          <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex items-center text-xs text-slate-500 mb-2">
+              <span><i class="far fa-calendar-alt mr-1"></i> ${formatDate(article.date)}</span>
+              <span class="mx-2">•</span>
+              <span><i class="far fa-user mr-1"></i> ${article.author}</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-2 line-clamp-2">${article.title}</h3>
+            <p class="text-slate-500 text-sm mb-4 line-clamp-3">${article.excerpt}</p>
+            <span class="text-teal-600 font-medium text-sm inline-flex items-center">Baca selengkapnya <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+          </div>
+        </div>
+      `).join('');
+        }
+
+        function renderArticleDetail(articleId) {
+            const article = articles.find(a => a.id == articleId);
+            if (!article) {
+                document.querySelector('main').innerHTML = '<div class="pt-32 text-center">Artikel tidak ditemukan. <a href="artikel.html" class="text-teal-600">Kembali ke daftar artikel</a></div>';
+                return;
+            }
+            const main = document.querySelector('main');
+            main.innerHTML = `
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+          <a href="artikel.html" class="inline-flex items-center text-teal-600 mb-6 hover:underline"><i class="fas fa-arrow-left mr-2"></i> Kembali ke daftar artikel</a>
+          <img src="${article.image}" alt="${article.title}" class="w-full h-64 md:h-96 object-cover rounded-xl shadow-md mb-6">
+          <div class="flex items-center text-sm text-slate-500 mb-4">
+            <span><i class="far fa-calendar-alt mr-1"></i> ${formatDate(article.date)}</span>
+            <span class="mx-2">•</span>
+            <span><i class="far fa-user mr-1"></i> ${article.author}</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">${article.title}</h1>
+          <div class="prose-custom text-slate-600 leading-relaxed">
+            ${article.content}
+          </div>
+          <div class="mt-8 pt-6 border-t border-slate-200">
+            <p class="text-slate-500 text-sm">Butuh layanan sedot WC atau konsultasi? <a href="https://wa.me/6285748901055" class="text-teal-600 font-semibold">Hubungi kami via WhatsApp</a> untuk respon cepat.</p>
+          </div>
+        </div>
+      `;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+        if (articleId) renderArticleDetail(parseInt(articleId));
+        else renderArticleList();
+
+        AOS.init({ duration: 800, once: true });
+        const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        window.onscroll = function () { let btn = document.getElementById('scrollTopBtn'); if (window.scrollY > 400) btn.classList.add('show'); else btn.classList.remove('show'); };
+        document.getElementById('scrollTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+
+</html>

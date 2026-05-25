@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sedot WC Putra Tangkas Semesta - Galeri</title>
+    <link rel="icon" type="image/jpeg" href="logo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background-color: #ffffffdd;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #25D366;
+            border-radius: 9999px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .float-wa:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99;
+            background-color: #334155;
+            color: white;
+            border-radius: 9999px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        #map {
+            height: 280px;
+            width: 100%;
+            border-radius: 1rem;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/6285748901055" target="_blank" class="float-wa flex items-center justify-center w-12 h-12"><i
+            class="fab fa-whatsapp text-white text-xl"></i></a>
+    <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up text-sm"></i></div>
+    <div id="lightbox" class="lightbox"><span class="close-lightbox">&times;</span><img id="lightbox-img" src=""></div>
+
+    <nav class="navbar fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-5">
+            <div class="flex items-center space-x-2"><img src="logo1.png" class="h-8 rounded-md">
+                <div><span class="font-bold text-sm md:text-lg text-slate-800">Sedot WC Putra Tangkas
+                        Semesta</span><span class="text-[9px] md:text-[10px] text-slate-500 block">Profesional &
+                        Terpercaya</span></div>
+            </div>
+            <div class="hidden md:flex space-x-5 text-sm font-medium"><a href="index.html"
+                    class="text-slate-700 hover:text-teal-600">Beranda</a><a href="tentang.html"
+                    class="text-slate-700 hover:text-teal-600">Tentang</a><a href="layanan.html"
+                    class="text-slate-700 hover:text-teal-600">Layanan</a><a href="galeri.html"
+                    class="text-teal-600">Galeri</a><a href="testimonial.html"
+                    class="text-slate-700 hover:text-teal-600">Testimoni</a><a href="artikel.html"
+                    class="text-slate-700 hover:text-teal-600">Artikel</a><a href="faq.html"
+                    class="text-slate-700 hover:text-teal-600">FAQ</a><a href="https://wa.me/6285748901055"
+                    class="bg-teal-600 text-white px-4 py-1.5 rounded-full">Hubungi WA</a></div>
+            <button id="menuBtn" class="md:hidden text-xl"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white/95 border-t py-3 px-5">
+            <div class="flex flex-col space-y-2 text-sm font-medium"><a href="index.html">Beranda</a><a
+                    href="tentang.html">Tentang</a><a href="layanan.html">Layanan</a><a href="galeri.html">Galeri</a><a
+                    href="testimonial.html">Testimoni</a><a href="artikel.html">Artikel</a><a href="faq.html">FAQ</a><a
+                    href="https://wa.me/6285748901055"
+                    class="bg-teal-600 text-white text-center py-1.5 rounded-full">Hubungi WA</a></div>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-32 max-w-7xl mx-auto px-5 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-teal-600 font-semibold uppercase tracking-wide text-sm">Galeri & Dokumentasi</h2>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-800">Proses & Hasil Kerja Kami</h3>
+        </div>
+        <div class="gallery-section mb-8">
+            <div class="text-center mb-3">
+                <h4
+                    class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">
+                    🚛 Unit Armada</h4>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="gallery-img cursor-pointer" data-img="images3.jpeg"><img src="images3.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images7.jpeg"><img src="images7.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images8.jpeg"><img src="images8.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images9.jpeg"><img src="images9.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images11.jpeg"><img src="images11.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+            </div>
+        </div>
+        <div class="gallery-section mb-8">
+            <div class="text-center mb-3">
+                <h4
+                    class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">
+                    📸 Pembuangan Resmi</h4>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="gallery-img cursor-pointer" data-img="images1.jpeg"><img src="images1.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images2.jpeg"><img src="images2.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+            </div>
+        </div>
+        <div class="gallery-section mb-8">
+            <div class="text-center mb-3">
+                <h4
+                    class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">
+                    🔧 Eksekusi Pengerjaan</h4>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="gallery-img cursor-pointer" data-img="images4.jpeg"><img src="images4.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images5.jpeg"><img src="images5.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images6.jpeg"><img src="images6.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+                <div class="gallery-img cursor-pointer" data-img="images10.jpeg"><img src="images10.jpeg"
+                        class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90"></div>
+            </div>
+        </div>
+        <div class="mt-12">
+            <div class="text-center mb-4">
+                <h4 class="text-xl md:text-2xl font-semibold text-slate-800">🌍 Jangkauan Layanan</h4>
+                <p class="text-slate-500 text-sm">Klik marker untuk melihat kota yang kami layani</p>
+            </div>
+            <div id="map" class="border border-slate-200 shadow-sm"></div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-8 text-center text-slate-400 text-xs">&copy;2018 - 2026 Sedot WC Putra
+        Tangkas Semesta</footer>
+
+    <script>
+        AOS.init(); const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu'); menuBtn.onclick = () => mobileMenu.classList.toggle('open'); window.onscroll = () => { let btn = document.getElementById('scrollTopBtn'); if (window.scrollY > 300) btn.classList.add('show'); else btn.classList.remove('show'); }; document.getElementById('scrollTopBtn').onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightbox-img'); document.querySelectorAll('.gallery-img').forEach(el => { el.onclick = () => { lightboxImg.src = el.dataset.img; lightbox.style.display = 'flex'; }; }); document.querySelector('.close-lightbox').onclick = () => lightbox.style.display = 'none'; lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.style.display = 'none'; };
+        const cities = [{ name: "Gresik", lat: -7.1563, lon: 112.6535 }, { name: "Lamongan", lat: -7.1167, lon: 112.4167 }, { name: "Sidoarjo", lat: -7.4531, lon: 112.7167 }, { name: "Kediri", lat: -7.8167, lon: 112.0167 }, { name: "Mojokerto", lat: -7.4705, lon: 112.4401 }, { name: "Surabaya", lat: -7.2575, lon: 112.7521 }, { name: "Madura", lat: -7.0167, lon: 113.3333 }, { name: "Nganjuk", lat: -7.6, lon: 111.9 }, { name: "Bojonegoro", lat: -7.15, lon: 111.8833 }, { name: "Tuban", lat: -6.9, lon: 112.05 }];
+        const map = L.map('map').setView([-7.5, 112.5], 8); L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>' }).addTo(map); cities.forEach(c => L.marker([c.lat, c.lon]).addTo(map).bindPopup(`<b>${c.name}</b><br>Kami melayani kota ini.`));
+    </script>
+</body>
+
+</html>

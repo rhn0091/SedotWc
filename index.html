@@ -4,19 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <!-- Meta description dengan kata kunci kota (tetap) -->
   <meta name="description"
     content="Sedot WC Putra Tangkas Semesta melayani Gresik, Lamongan, Sidoarjo, Surabaya, Kediri, Mojokerto, Nganjuk, Bojonegoro, Tuban & Madura. Termurah & terpercaya se-Jatim. Konsultasi gratis via WA 24 jam.">
-
-  <!-- TITLE YANG DIPERKAYA DENGAN NAMA DAERAH UNTUK SEO LEBIH BAGUS -->
-  <title>Sedot WC Putra Tangkas Semesta | Ahli Sedot WC & Saluran Mampet di Gresik, Lamongan, Sidoarjo, Surabaya,
-    Kediri, Mojokerto, Nganjuk, Bojonegoro, Tuban, Madura - Jasa Profesional Terpercaya 24 Jam</title>
-
-  <!-- Favicon -->
+  <title>Sedot WC Putra Tangkas Semesta | Sedot WC & Saluran Mampet di Jawa Timur</title>
   <link rel="icon" type="image/jpeg" sizes="32x32" href="logo1.png">
   <link rel="shortcut icon" type="image/jpeg" href="logo1.png">
-
-  <!-- Schema.org (areaServed tetap ada) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,43 +37,23 @@
     "sameAs": ["https://wa.me/6285748901055"]
   }
   </script>
-
-  <!-- Tailwind + AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <style>
-    /* Semua style sama seperti kode sebelumnya, tidak diubah */
     body {
       font-family: 'Inter', sans-serif;
     }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-solid {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #particles-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0.35;
+    .navbar {
+      background-color: #ffffffdd;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .float-wa {
@@ -90,13 +62,13 @@
       right: 20px;
       z-index: 99;
       background-color: #25D366;
-      border-radius: 50%;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s ease;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
     }
 
     .float-wa:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       background-color: #128C7E;
     }
 
@@ -105,19 +77,19 @@
       bottom: 20px;
       left: 20px;
       z-index: 99;
-      background-color: #1e293b;
+      background-color: #334155;
       color: white;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
+      border-radius: 9999px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       opacity: 0;
       visibility: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .scroll-top.show {
@@ -126,8 +98,8 @@
     }
 
     .scroll-top:hover {
-      background-color: #2563eb;
-      transform: translateY(-5px);
+      background-color: #0f172a;
+      transform: translateY(-2px);
     }
 
     .lightbox {
@@ -138,7 +110,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
       cursor: pointer;
@@ -148,7 +120,7 @@
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
-      border-radius: 12px;
+      border-radius: 16px;
     }
 
     .close-lightbox {
@@ -156,13 +128,13 @@
       top: 20px;
       right: 25px;
       color: #fff;
-      font-size: 35px;
+      font-size: 32px;
       font-weight: bold;
       cursor: pointer;
     }
 
     .stars {
-      color: #fbbf24;
+      color: #f59e0b;
       letter-spacing: 2px;
     }
 
@@ -176,7 +148,7 @@
       }
 
       50% {
-        opacity: 0.4;
+        opacity: 0.5;
       }
 
       100% {
@@ -205,472 +177,369 @@
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 scroll-smooth">
+<body class="bg-white text-slate-800 scroll-smooth">
 
-  <!-- Floating WA (sama) -->
   <a href="https://wa.me/6285748901055?text=Halo%20Putra%20Tangkas%20Semesta,%20saya%20butuh%20layanan%20sedot%20WC"
-    target="_blank" class="float-wa flex items-center justify-center w-12 h-12 md:w-14 md:h-16 shadow-xl z-50">
-    <i class="fab fa-whatsapp text-white text-2xl md:text-3xl"></i>
+    target="_blank" class="float-wa flex items-center justify-center w-12 h-12 shadow-md z-50">
+    <i class="fab fa-whatsapp text-white text-xl"></i>
   </a>
 
-  <!-- Scroll Top -->
-  <div class="scroll-top" id="scrollTopBtn">
-    <i class="fas fa-arrow-up text-lg"></i>
-  </div>
+  <div class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up text-sm"></i></div>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="Lightbox">
-  </div>
+  <div id="lightbox" class="lightbox"><span class="close-lightbox">&times;</span><img id="lightbox-img" src=""
+      alt="Lightbox"></div>
 
-  <!-- Navbar (sama seperti sebelumnya, tidak diubah) -->
-  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass border-b border-white/20">
+  <nav class="navbar fixed top-0 left-0 w-full z-50 transition-all duration-200">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-5">
       <div class="flex items-center space-x-2 md:space-x-3">
-        <img src="logo1.png" alt="Logo" class="h-8 w-auto rounded-lg shadow-md"
+        <img src="logo1.png" alt="Logo" class="h-8 w-auto rounded-md shadow-sm"
           onerror="this.src='https://placehold.co/160x60?text=Logo+PTS'">
-        <div class="flex flex-col">
-          <span class="font-bold text-sm md:text-xl tracking-tight text-blue-900 uppercase">Sedot WC Putra Tangkas
-            Semesta</span>
-          <span class="text-[8px] md:text-[10px] font-semibold text-slate-500 -mt-1">Profesional & Terpercaya</span>
-        </div>
+        <div><span class="font-bold text-sm md:text-lg tracking-tight text-slate-800">Sedot WC Putra Tangkas
+            Semesta</span><span class="text-[9px] md:text-[10px] font-medium text-slate-500 block -mt-0.5">Profesional &
+            Terpercaya</span></div>
       </div>
-      <div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-wide uppercase">
-        <a href="#about" class="text-slate-600 hover:text-blue-600 transition">Tentang</a>
-        <a href="#layanan" class="text-slate-600 hover:text-blue-600 transition">Layanan</a>
-        <a href="#galeri" class="text-slate-600 hover:text-blue-600 transition">Galeri</a>
-        <a href="#testimonial" class="text-slate-600 hover:text-blue-600 transition">Testimoni</a>
-        <a href="#faq" class="text-slate-600 hover:text-blue-600 transition">FAQ</a>
+      <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
+        <a href="index.html" class="text-teal-600">Beranda</a>
+        <a href="tentang.html" class="text-slate-700 hover:text-teal-600 transition">Tentang</a>
+        <a href="layanan.html" class="text-slate-700 hover:text-teal-600 transition">Layanan</a>
+        <a href="galeri.html" class="text-slate-700 hover:text-teal-600 transition">Galeri</a>
+        <a href="testimonial.html" class="text-slate-700 hover:text-teal-600 transition">Testimoni</a>
+        <a href="artikel.html" class="text-slate-700 hover:text-teal-600 transition">Artikel</a>
+        <a href="faq.html" class="text-slate-700 hover:text-teal-600 transition">FAQ</a>
         <a href="https://wa.me/6285748901055"
-          class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg text-sm">Pesan
-          Sekarang</a>
+          class="bg-teal-600 text-white px-4 py-1.5 rounded-full hover:bg-teal-700 transition text-sm shadow-sm">Hubungi
+          WA</a>
       </div>
-      <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button id="menuBtn" class="md:hidden text-slate-700 focus:outline-none text-xl"><i
+          class="fas fa-bars"></i></button>
     </div>
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-white/90 backdrop-blur-md border-t border-white/20 py-4 px-5">
-      <div class="flex flex-col space-y-3 text-sm font-semibold">
-        <a href="#about" class="text-slate-700 hover:text-blue-600 py-1">Tentang</a>
-        <a href="#layanan" class="text-slate-700 hover:text-blue-600 py-1">Layanan</a>
-        <a href="#galeri" class="text-slate-700 hover:text-blue-600 py-1">Galeri</a>
-        <a href="#testimonial" class="text-slate-700 hover:text-blue-600 py-1">Testimoni</a>
-        <a href="#faq" class="text-slate-700 hover:text-blue-600 py-1">FAQ</a>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white/95 border-t border-slate-100 py-3 px-5 shadow-md">
+      <div class="flex flex-col space-y-2 text-sm font-medium">
+        <a href="index.html" class="text-teal-600 py-1">Beranda</a>
+        <a href="tentang.html" class="text-slate-700 hover:text-teal-600 py-1">Tentang</a>
+        <a href="layanan.html" class="text-slate-700 hover:text-teal-600 py-1">Layanan</a>
+        <a href="galeri.html" class="text-slate-700 hover:text-teal-600 py-1">Galeri</a>
+        <a href="testimonial.html" class="text-slate-700 hover:text-teal-600 py-1">Testimoni</a>
+        <a href="artikel.html" class="text-slate-700 hover:text-teal-600 py-1">Artikel</a>
+        <a href="faq.html" class="text-slate-700 hover:text-teal-600 py-1">FAQ</a>
         <a href="https://wa.me/6285748901055"
-          class="bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700 transition mt-2">Pesan
-          Sekarang</a>
+          class="bg-teal-600 text-white text-center px-4 py-1.5 rounded-full hover:bg-teal-700 transition mt-1">Hubungi
+          WA</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero (sama, tanpa teks kota) -->
-  <header class="relative h-screen flex items-center justify-center overflow-hidden hero-solid">
-    <canvas id="particles-canvas"></canvas>
-    <div class="max-w-5xl px-5 text-center text-white relative z-10" data-aos="zoom-out">
+  <header class="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-slate-50 to-white">
+    <div class="max-w-5xl mx-auto px-5 text-center">
       <span
-        class="inline-block px-3 py-1 mb-4 text-[10px] md:text-xs font-bold tracking-widest uppercase bg-blue-600 rounded-full">Layanan
+        class="inline-block px-3 py-1 mb-4 text-[10px] md:text-xs font-semibold tracking-wide uppercase bg-teal-100 text-teal-700 rounded-full">Layanan
         24 Jam Non-Stop</span>
-      <h1 class="text-3xl md:text-7xl font-extrabold mb-4 leading-tight">Solusi Kebersihan <br> <span
-          class="text-blue-300">Tanpa Bau, Tanpa Ragu.</span></h1>
-      <p class="text-sm md:text-xl mb-6 text-slate-100 max-w-2xl mx-auto font-light">Armada modern, tim profesional,
-        siap melayani Anda kapan saja.</p>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-slate-800">Solusi Kebersihan <br> <span
+          class="text-teal-600">Tanpa Ribet, Tanpa Bau.</span></h1>
+      <p class="text-base md:text-lg mb-6 text-slate-600 max-w-2xl mx-auto">Armada modern, tim profesional, siap
+        melayani Anda kapan saja. Harga transparan, konsultasi gratis.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-3 items-center">
-        <div class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-3 py-1.5 text-xs md:text-sm">
-          <span class="w-2 h-2 bg-green-400 rounded-full blink-green"></span>
-          <span>Status: Aktif 24 Jam</span>
-        </div>
+        <div
+          class="flex items-center gap-2 bg-white border border-slate-200 rounded-full px-3 py-1.5 text-xs text-slate-600 shadow-sm">
+          <span class="w-2 h-2 bg-green-500 rounded-full blink-green"></span><span>Status: Aktif 24 Jam</span></div>
         <button id="shareLocationBtn"
-          class="px-4 py-1.5 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur transition flex items-center gap-2 text-xs md:text-sm font-semibold">
-          <i class="fas fa-map-marker-alt"></i> Kirim Lokasi Saya
-        </button>
+          class="px-4 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-full transition flex items-center gap-2 text-xs font-medium text-slate-700 border border-slate-200"><i
+            class="fas fa-map-marker-alt"></i> Kirim Lokasi Saya</button>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
         <a href="https://wa.me/6285748901055"
-          class="px-6 py-2.5 md:px-8 md:py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition transform hover:scale-105 shadow-xl text-sm md:text-base">Hubungi
+          class="px-6 py-2.5 md:px-8 md:py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-full transition shadow-sm text-sm md:text-base">Hubungi
           WhatsApp</a>
-        <a href="#layanan"
-          class="px-6 py-2.5 md:px-8 md:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-xl border border-white/30 transition text-sm md:text-base">Lihat
+        <a href="layanan.html"
+          class="px-6 py-2.5 md:px-8 md:py-3 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-full border border-slate-300 transition text-sm md:text-base shadow-sm">Lihat
           Layanan</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Keunggulan (sama) -->
-    <section id="keunggulan" class="relative -mt-12 md:-mt-16 z-10 max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-blue-600 text-center"
-          data-aos="fade-up">
-          <div class="text-2xl md:text-3xl mb-2">⏱️</div>
-          <h3 class="font-bold text-sm md:text-lg mb-1">Fast Response</h3>
+    <section class="relative -mt-8 z-10 max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm text-center" data-aos="fade-up">
+          <div class="text-2xl mb-1">⏱️</div>
+          <h3 class="font-semibold text-sm md:text-base mb-0.5">Fast Response</h3>
           <p class="text-slate-500 text-xs">Tim siap < 1 jam</p>
         </div>
-        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-green-500 text-center"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="text-2xl md:text-3xl mb-2">💎</div>
-          <h3 class="font-bold text-sm md:text-lg mb-1">Termurah No.1</h3>
-          <p class="text-slate-500 text-xs">Harga bersahabat se-Jatim</p>
+        <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm text-center" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="text-2xl mb-1">💎</div>
+          <h3 class="font-semibold text-sm md:text-base mb-0.5">Harga Terjangkau</h3>
+          <p class="text-slate-500 text-xs">Bersahabat se-Jatim</p>
         </div>
-        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-orange-500 text-center"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="text-2xl md:text-3xl mb-2">🚜</div>
-          <h3 class="font-bold text-sm md:text-lg mb-1">Alat Modern</h3>
+        <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm text-center" data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="text-2xl mb-1">🚜</div>
+          <h3 class="font-semibold text-sm md:text-base mb-0.5">Alat Modern</h3>
           <p class="text-slate-500 text-xs">Daya hisap tinggi</p>
         </div>
-        <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border-b-4 border-red-500 text-center" data-aos="fade-up"
+        <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm text-center" data-aos="fade-up"
           data-aos-delay="300">
-          <div class="text-2xl md:text-3xl mb-2">🛡️</div>
-          <h3 class="font-bold text-sm md:text-lg mb-1">Bergaransi</h3>
-          <p class="text-slate-500 text-xs">Kerja bersih & rapi</p>
+          <div class="text-2xl mb-1">🛡️</div>
+          <h3 class="font-semibold text-sm md:text-base mb-0.5">Bergaransi</h3>
+          <p class="text-slate-500 text-xs">Kerja rapi & bersih</p>
         </div>
       </div>
     </section>
 
-    <!-- Tentang (sama) -->
-    <section id="about" class="py-16 md:py-24 max-w-7xl mx-auto px-5">
-      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+    <section id="about" class="py-16 md:py-20 max-w-7xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div class="md:w-1/2 relative" data-aos="fade-right">
-          <div class="absolute -top-4 -left-4 w-40 h-40 md:w-64 md:h-64 bg-blue-100 rounded-3xl -z-10"></div>
-          <img src="images13.jpeg" alt="Tentang Kami"
-            class="rounded-3xl shadow-2xl w-full object-cover h-[250px] md:h-[450px]">
+          <div class="absolute -top-3 -left-3 w-32 h-32 md:w-48 md:h-48 bg-teal-100 rounded-2xl -z-10"></div><img
+            src="images13.jpeg" alt="Tentang Kami"
+            class="rounded-2xl shadow-md w-full object-cover h-[250px] md:h-[400px]">
         </div>
         <div class="md:w-1/2" data-aos="fade-left">
-          <h2 class="text-xs md:text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">Tentang Putra Tangkas
-            Semesta</h2>
-          <h3 class="text-2xl md:text-4xl font-bold mb-4 text-slate-900 leading-tight">Ahli Sanitasi & Kebersihan</h3>
-          <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Kami hadir untuk menjaga lingkungan Anda
-            tetap sehat. Dengan pengalaman bertahun-tahun, setiap pekerjaan ditangani secara profesional.</p>
-          <ul class="space-y-2 mb-6">
+          <h2 class="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-2">Tentang Kami</h2>
+          <h3 class="text-2xl md:text-3xl font-bold mb-3 text-slate-800">Ahli Sanitasi & Kebersihan</h3>
+          <p class="text-slate-600 leading-relaxed mb-4 text-sm">Kami hadir untuk menjaga lingkungan Anda tetap sehat.
+            Dengan pengalaman bertahun-tahun, setiap pekerjaan ditangani secara profesional dan ramah.</p>
+          <ul class="space-y-2 mb-5">
             <li class="flex items-center space-x-2 text-sm"><span
-                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Tenaga
-                ahli tersertifikasi</span></li>
+                class="w-4 h-4 bg-teal-600 text-white flex items-center justify-center rounded-full text-[10px]">✓</span><span>Tenaga
+                ahli berpengalaman</span></li>
             <li class="flex items-center space-x-2 text-sm"><span
-                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Armada
+                class="w-4 h-4 bg-teal-600 text-white flex items-center justify-center rounded-full text-[10px]">✓</span><span>Armada
                 bersih & selang panjang</span></li>
             <li class="flex items-center space-x-2 text-sm"><span
-                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Respon
+                class="w-4 h-4 bg-teal-600 text-white flex items-center justify-center rounded-full text-[10px]">✓</span><span>Respon
                 Cepat 24 Jam</span></li>
             <li class="flex items-center space-x-2 text-sm"><span
-                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Harga
-                Transparan & Termurah se-Jatim</span></li>
-            <li class="flex items-center space-x-2 text-sm"><span
-                class="w-4 h-4 bg-blue-600 text-white flex items-center justify-center rounded-full text-[8px]">✔</span><span>Bergaransi
-                & Profesional</span></li>
+                class="w-4 h-4 bg-teal-600 text-white flex items-center justify-center rounded-full text-[10px]">✓</span><span>Harga
+                transparan & tanpa biaya tersembunyi</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Layanan (sama) -->
-    <section id="layanan" class="py-16 md:py-24 bg-slate-900 text-white">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="max-w-7xl mx-auto px-5">
-        <div class="text-center mb-10">
-          <h2 class="text-blue-400 font-bold tracking-widest uppercase mb-2 text-sm">Layanan Kami</h2>
-          <h3 class="text-2xl md:text-4xl font-bold">Pilih Layanan Anda</h3>
-          <p
-            class="text-slate-300 max-w-2xl mx-auto mt-3 text-xs md:text-sm bg-white/5 inline-block px-4 py-2 rounded-full">
-            💬 Hubungi CS via WA untuk informasi lebih lanjut & Konsultasi.</p>
+        <div class="text-center mb-8">
+          <h2 class="text-teal-600 font-semibold tracking-wide uppercase mb-2 text-sm">Layanan Kami</h2>
+          <h3 class="text-2xl md:text-3xl font-bold text-slate-800">Pilih Layanan yang Anda Butuhkan</h3>
+          <p class="text-slate-500 max-w-2xl mx-auto mt-2 text-sm">💬 Konsultasi gratis via WhatsApp – tanya apa saja
+          </p>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-blue-600 transition"
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"
             data-aos="fade-up">
-            <div
-              class="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
-              🚽</div>
-            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot WC Rumah Tangga</h4>
-            <p class="text-slate-400 mb-4 text-sm">Pembersihan septic tank rumah tangga tuntas.</p>
-            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20WC%20Standar"
-              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition text-sm">Tanya
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl mb-3">🚽</div>
+            <h4 class="text-xl font-bold mb-1">Sedot WC Rumah Tangga</h4>
+            <p class="text-slate-500 mb-4 text-sm">Pembersihan septic tank rumah tangga tuntas hingga bersih.</p><a
+              href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20WC%20Standar"
+              class="inline-block w-full py-2 bg-slate-100 text-center rounded-full font-medium text-slate-700 hover:bg-teal-600 hover:text-white transition text-sm">Tanya
               via WA</a>
           </div>
-          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-green-600 transition"
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"
             data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="w-12 h-12 md:w-16 md:h-16 bg-green-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
-              🚿</div>
-            <h4 class="text-xl md:text-2xl font-bold mb-2">Pelancaran Saluran Mampet</h4>
-            <p class="text-slate-400 mb-4 text-sm">Solusi pipa tersumbat tanpa bongkar.</p>
-            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Saluran%20Mampet"
-              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-green-600 transition text-sm">Tanya
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl mb-3">🚿</div>
+            <h4 class="text-xl font-bold mb-1">Pelancaran Saluran Mampet</h4>
+            <p class="text-slate-500 mb-4 text-sm">Solusi pipa tersumbat tanpa bongkar, cepat dan efektif.</p><a
+              href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Saluran%20Mampet"
+              class="inline-block w-full py-2 bg-slate-100 text-center rounded-full font-medium text-slate-700 hover:bg-teal-600 hover:text-white transition text-sm">Tanya
               via WA</a>
           </div>
-          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-orange-600 transition"
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"
             data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="w-12 h-12 md:w-16 md:h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4">
-              🏭</div>
-            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot Limbah Industri</h4>
-            <p class="text-slate-400 mb-4 text-sm">Penanganan limbah cair pabrik & restoran.</p>
-            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Limbah%20Industri"
-              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition text-sm">Hubungi
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl mb-3">🏭</div>
+            <h4 class="text-xl font-bold mb-1">Sedot Limbah Industri</h4>
+            <p class="text-slate-500 mb-4 text-sm">Penanganan limbah cair pabrik, restoran, dan catering.</p><a
+              href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Limbah%20Industri"
+              class="inline-block w-full py-2 bg-slate-100 text-center rounded-full font-medium text-slate-700 hover:bg-teal-600 hover:text-white transition text-sm">Hubungi
               Kami</a>
           </div>
-          <div class="bg-white/5 p-6 md:p-10 rounded-3xl border border-white/10 hover:bg-orange-600 transition group"
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"
             data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="w-12 h-12 md:w-16 md:h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4"
-              aria-hidden="true">🍽️</div>
-            <h4 class="text-xl md:text-2xl font-bold mb-2">Sedot Limbah catering</h4>
-            <p class="text-slate-300 mb-4 text-sm">Penanganan limbah cair industri catering profesional & berizin.</p>
-            <a href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20Limbah%20Ketring"
-              class="inline-block w-full py-2 bg-white/10 text-center rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition text-sm">Hubungi
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl mb-3">🍽️</div>
+            <h4 class="text-xl font-bold mb-1">Sedot Limbah Catering</h4>
+            <p class="text-slate-500 mb-4 text-sm">Penanganan limbah cair industri catering profesional & berizin.</p><a
+              href="https://wa.me/6285748901055?text=Saya%20butuh%20layanan%20Sedot%20Limbah%20Catering"
+              class="inline-block w-full py-2 bg-slate-100 text-center rounded-full font-medium text-slate-700 hover:bg-teal-600 hover:text-white transition text-sm">Hubungi
               Kami</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GALERI + PETA (sama) -->
-    <section id="galeri" class="py-16 md:py-24 max-w-7xl mx-auto px-5">
-      <div class="text-center mb-10">
-        <h2 class="text-blue-600 font-bold uppercase tracking-wider mb-2 text-sm">Galeri & Layanan Premium</h2>
-        <h3 class="text-2xl md:text-4xl font-bold">Proses & Hasil Kerja</h3>
+    <section class="py-16 md:py-20 max-w-7xl mx-auto px-5">
+      <div class="text-center mb-8">
+        <h2 class="text-teal-600 font-semibold uppercase tracking-wide text-sm">Galeri & Dokumentasi</h2>
+        <h3 class="text-2xl md:text-3xl font-bold text-slate-800">Proses & Hasil Kerja Kami</h3>
       </div>
-      <div class="gallery-section mb-10" data-aos="fade-up">
+      <div class="gallery-section mb-8" data-aos="fade-up">
         <div class="text-center mb-3">
-          <h4 class="text-blue-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-blue-600">🚛 Unit Armada
-          </h4>
+          <h4 class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">🚛
+            Unit Armada</h4>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <div class="gallery-img cursor-pointer" data-img="images3.jpeg"><img src="images3.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images7.jpeg"><img src="images7.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images8.jpeg"><img src="images8.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images9.jpeg"><img src="images9.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images11.jpeg"><img src="images11.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
         </div>
       </div>
-      <div class="gallery-section mb-10" data-aos="fade-up" data-aos-delay="100">
+      <div class="gallery-section mb-8" data-aos="fade-up" data-aos-delay="100">
         <div class="text-center mb-3">
-          <h4 class="text-red-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-red-600">📸 Pembuangan
-            Resmi</h4>
+          <h4 class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">📸
+            Pembuangan Resmi</h4>
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div class="gallery-img cursor-pointer" data-img="images1.jpeg"><img src="images1.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images2.jpeg"><img src="images2.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
         </div>
       </div>
-      <div class="gallery-section mb-10" data-aos="fade-up" data-aos-delay="200">
+      <div class="gallery-section mb-8" data-aos="fade-up" data-aos-delay="200">
         <div class="text-center mb-3">
-          <h4 class="text-green-600 text-xl md:text-2xl font-bold inline-block border-b-2 border-green-600">🔧 Eksekusi
-            Pengerjaan</h4>
+          <h4 class="text-slate-700 text-lg md:text-xl font-semibold inline-block border-b-2 border-teal-300 pb-1">🔧
+            Eksekusi Pengerjaan</h4>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <div class="gallery-img cursor-pointer" data-img="images4.jpeg"><img src="images4.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images5.jpeg"><img src="images5.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images6.jpeg"><img src="images6.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
           <div class="gallery-img cursor-pointer" data-img="images10.jpeg"><img src="images10.jpeg"
-              class="rounded-2xl shadow aspect-square object-cover w-full"></div>
+              class="rounded-xl shadow-sm aspect-square object-cover w-full hover:opacity-90 transition"></div>
         </div>
       </div>
-      <!-- Peta -->
-      <div class="mt-12 md:mt-20" data-aos="fade-up">
+      <div class="mt-12" data-aos="fade-up">
         <div class="text-center mb-4">
-          <h4 class="text-xl md:text-2xl font-bold text-slate-800">🌍 Jangkauan Layanan Kami</h4>
-          <p class="text-slate-500 text-xs md:text-sm">Klik marker untuk melihat kota yang kami layani</p>
+          <h4 class="text-xl md:text-2xl font-semibold text-slate-800">🌍 Jangkauan Layanan</h4>
+          <p class="text-slate-500 text-sm">Klik marker untuk melihat kota yang kami layani</p>
         </div>
-        <div id="map"></div>
+        <div id="map" class="border border-slate-200 shadow-sm"></div>
         <p class="text-xs text-center text-slate-400 mt-2">Kami melayani berbagai kota di Jawa Timur. Silakan klik
           marker untuk detail.</p>
       </div>
     </section>
 
-    <!-- Testimonial (sama) -->
-    <section id="testimonial" class="py-16 md:py-24 bg-blue-50">
+    <section class="py-16 md:py-20 bg-slate-50">
       <div class="max-w-7xl mx-auto px-5 text-center">
-        <h2 class="text-blue-600 font-bold uppercase mb-2 text-sm">Testimoni Pelanggan</h2>
-        <h3 class="text-2xl md:text-4xl font-bold mb-8">Apa Kata Mereka?</h3>
+        <h2 class="text-teal-600 font-semibold uppercase tracking-wide text-sm">Testimoni Pelanggan</h2>
+        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-slate-800">Apa Kata Mereka?</h3>
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Pelayanan cepat, tim ramah, hasil bersih total."</p>
-            <h4 class="font-bold mt-4 text-sm">— Budi Santoso</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"Pelayanan cepat, tim ramah, hasil bersih total."</p>
+            <h4 class="font-semibold mt-3 text-sm">— Budi Santoso</h4>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Profesional, tepat waktu, dan sangat membantu."</p>
-            <h4 class="font-bold mt-4 text-sm">— Siti Aisyah</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"Profesional, tepat waktu, dan sangat membantu."</p>
+            <h4 class="font-semibold mt-3 text-sm">— Siti Aisyah</h4>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Saluran mampet langsung lancar, puas banget!"</p>
-            <h4 class="font-bold mt-4 text-sm">— Bambang Saipul</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"Saluran mampet langsung lancar, puas banget!"</p>
+            <h4 class="font-semibold mt-3 text-sm">— Bambang Saipul</h4>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Pengerjaan nya Cepat dan Efisiean!"</p>
-            <h4 class="font-bold mt-4 text-sm">— Wahyu</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"Pengerjaan cepat dan efisien."</p>
+            <h4 class="font-semibold mt-3 text-sm">— Wahyu</h4>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Pelayanan cepat, tepat waktu, dan petugas sangat profesional. Masalah WC mampet
-              dan penuh langsung beres tanpa berantakan."</p>
-            <h4 class="font-bold mt-4 text-sm">— Bapak Hendra</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"WC mampet langsung beres tanpa berantakan. Makasih!"</p>
+            <h4 class="font-semibold mt-3 text-sm">— Bapak Hendra</h4>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-lg">
-            <div class="stars mb-2 text-sm">★★★★★</div>
-            <p class="italic text-sm">"Sudah dua kali menggunakan jasa ini. Hasilnya memuaskan, limbah tersedot bersih
-              hingga ke septic tank. Harga transparan, tidak ada biaya tersembunyi. Sangat direkomendasikan."</p>
-            <h4 class="font-bold mt-4 text-sm">— Ibu Rina</h4>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left">
+            <div class="stars mb-1 text-sm">★★★★★</div>
+            <p class="italic text-slate-600 text-sm">"Sudah dua kali pakai, hasil memuaskan, harga transparan."</p>
+            <h4 class="font-semibold mt-3 text-sm">— Ibu Rina</h4>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ (diperkuat dengan penyebutan kota) -->
-    <section id="faq" class="py-16 md:py-24 max-w-4xl mx-auto px-5">
+    <section class="py-16 md:py-20 max-w-4xl mx-auto px-5">
       <div class="text-center mb-8">
-        <h2 class="text-blue-600 font-bold uppercase text-sm">FAQ</h2>
-        <h3 class="text-2xl md:text-4xl font-bold">Punya Pertanyaan?</h3>
+        <h2 class="text-teal-600 font-semibold uppercase tracking-wide text-sm">FAQ</h2>
+        <h3 class="text-2xl md:text-3xl font-bold text-slate-800">Pertanyaan Umum</h3>
       </div>
-      <div class="space-y-3">
-        <div class="bg-white p-5 rounded-2xl shadow">
-          <h4 class="font-bold text-md">Apakah melayani luar kota?</h4>
+      <div class="space-y-4">
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h4 class="font-semibold text-slate-800">Apakah melayani luar kota?</h4>
           <p class="text-slate-500 mt-1 text-sm">Ya, kami melayani Gresik, Lamongan, Sidoarjo, Surabaya, Kediri,
             Mojokerto, Nganjuk, Bojonegoro, Tuban, dan Madura. Untuk kota lain di Jatim, silakan hubungi WA.</p>
         </div>
-        <div class="bg-white p-5 rounded-2xl shadow">
-          <h4 class="font-bold text-md">Bagaimana cara pesan?</h4>
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h4 class="font-semibold text-slate-800">Bagaimana cara pesan?</h4>
           <p class="text-slate-500 mt-1 text-sm">Langsung klik tombol WhatsApp di pojok kanan bawah atau gunakan tombol
             "Kirim Lokasi Saya".</p>
         </div>
-        <div class="bg-white p-5 rounded-2xl shadow">
-          <h4 class="font-bold text-md">Apakah ada biaya survey?</h4>
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h4 class="font-semibold text-slate-800">Apakah ada biaya survey?</h4>
           <p class="text-slate-500 mt-1 text-sm">Tidak, konsultasi dan negosiasi via WA gratis tanpa biaya survey.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (ditambah daftar kota minimalis) -->
-  <footer class="bg-slate-950 text-white py-10 md:py-16">
-    <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+  <footer class="bg-slate-900 text-white pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
-        <h5 class="text-xl md:text-2xl font-bold mb-4 text-blue-400">Sedot WC Putra Tangkas Semesta</h5>
-        <p class="text-slate-400 text-sm">Layanan sanitasi terpercaya untuk rumah tangga dan industri. Harga fleksibel
-          dan transparan serta konsultasi gratis via WhatsApp.</p>
+        <h5 class="text-lg font-bold mb-3 text-teal-400">Sedot WC Putra Tangkas Semesta</h5>
+        <p class="text-slate-400 text-sm">Layanan sanitasi terpercaya untuk rumah tangga dan industri. Harga fleksibel,
+          transparan, konsultasi gratis via WhatsApp.</p>
       </div>
       <div>
-        <h5 class="font-bold mb-4 uppercase tracking-widest text-sm">Akses Cepat</h5>
-        <ul class="space-y-2 text-slate-400 text-sm">
-          <li><a href="#about" class="hover:text-white transition">Tentang Kami</a></li>
-          <li><a href="#layanan" class="hover:text-white transition">Layanan & Konsultasi</a></li>
-          <li><a href="#galeri" class="hover:text-white transition">Galeri Kerja</a></li>
+        <h5 class="font-semibold mb-3 uppercase tracking-wide text-sm text-slate-300">Akses Cepat</h5>
+        <ul class="space-y-1 text-slate-400 text-sm">
+          <li><a href="tentang.html" class="hover:text-white transition">Tentang Kami</a></li>
+          <li><a href="layanan.html" class="hover:text-white transition">Layanan & Konsultasi</a></li>
+          <li><a href="galeri.html" class="hover:text-white transition">Galeri Kerja</a></li>
+          <li><a href="artikel.html" class="hover:text-white transition">Artikel & Tips</a></li>
         </ul>
       </div>
       <div>
-        <h5 class="font-bold mb-4 uppercase tracking-widest text-sm">Kontak Konsultasi</h5>
-        <a href="tel:085748901055"
-          class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-green-400"><span>📞</span><span>0857-4890-1055</span></a>
-        <p class="text-slate-400 text-sm mt-2 italic">Buka 24 Jam - Chat WA untuk Konsultasi</p>
-        <a href="https://wa.me/6285748901055"
-          class="inline-block mt-3 bg-green-600 px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-green-700 transition">💬
-          Mulai Konsultasi di WhatsApp</a>
+        <h5 class="font-semibold mb-3 uppercase tracking-wide text-sm text-slate-300">Kontak Konsultasi</h5><a
+          href="tel:085748901055"
+          class="flex items-center space-x-2 text-lg font-semibold text-teal-400"><span>📞</span><span>0857-4890-1055</span></a>
+        <p class="text-slate-400 text-sm mt-1 italic">Buka 24 Jam - Chat WA untuk Konsultasi</p><a
+          href="https://wa.me/6285748901055"
+          class="inline-block mt-3 bg-teal-600 px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-teal-500 transition">💬
+          Mulai Konsultasi</a>
       </div>
     </div>
-    <!-- TAMBAHAN WILAYAH: daftar kota di footer (minimalis, tidak mengganggu) -->
-    <div class="max-w-7xl mx-auto px-5 border-t border-white/10 pt-6 mt-4 text-center">
+    <div class="max-w-7xl mx-auto px-5 border-t border-slate-800 pt-6 mt-6 text-center">
       <p class="text-slate-500 text-xs uppercase tracking-wide">Wilayah Layanan</p>
       <p class="text-slate-400 text-xs mt-1">Gresik | Lamongan | Sidoarjo | Surabaya | Kediri | Mojokerto | Nganjuk |
         Bojonegoro | Tuban | Madura</p>
     </div>
-    <div class="text-center pt-6 text-slate-500 text-xs tracking-widest uppercase">&copy;2018 - 2026 Sedot WC Putra
-      Tangkas Semesta | CS siap Konsultasi.</div>
+    <div class="text-center pt-5 text-slate-500 text-xs">&copy;2018 - 2026 Sedot WC Putra Tangkas Semesta | CS siap
+      konsultasi.</div>
   </footer>
 
   <script>
-    // Semua script sama seperti kode sebelumnya (AOS, mobile menu, scroll top, lightbox, peta, partikel, share location)
-    AOS.init({ duration: 1000, once: true });
-
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
-
-    window.onscroll = function () {
-      let scrollBtn = document.getElementById('scrollTopBtn');
-      if (window.scrollY > 500) scrollBtn.classList.add('show');
-      else scrollBtn.classList.remove('show');
-    };
+    AOS.init({ duration: 800, once: true });
+    const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    window.onscroll = function () { let btn = document.getElementById('scrollTopBtn'); if (window.scrollY > 400) btn.classList.add('show'); else btn.classList.remove('show'); };
     document.getElementById('scrollTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
     const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.gallery-img').forEach(el => {
-      el.addEventListener('click', () => { lightboxImg.src = el.getAttribute('data-img'); lightbox.style.display = 'flex'; });
-    });
+    document.querySelectorAll('.gallery-img').forEach(el => el.addEventListener('click', () => { lightboxImg.src = el.getAttribute('data-img'); lightbox.style.display = 'flex'; }));
     document.querySelector('.close-lightbox').addEventListener('click', () => lightbox.style.display = 'none');
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.style.display = 'none'; });
-
-    const cities = [
-      { name: "Gresik", lat: -7.1563, lon: 112.6535 }, { name: "Lamongan", lat: -7.1167, lon: 112.4167 },
-      { name: "Sidoarjo", lat: -7.4531, lon: 112.7167 }, { name: "Kediri", lat: -7.8167, lon: 112.0167 },
-      { name: "Mojokerto", lat: -7.4704747, lon: 112.4401329 }, { name: "Surabaya", lat: -7.2575, lon: 112.7521 },
-      { name: "Madura", lat: -7.0167, lon: 113.3333 }, { name: "Nganjuk", lat: -7.6, lon: 111.9 },
-      { name: "Bojonegoro", lat: -7.15, lon: 111.8833 }, { name: "Tuban", lat: -6.9, lon: 112.05 }
-    ];
+    const cities = [{ name: "Gresik", lat: -7.1563, lon: 112.6535 }, { name: "Lamongan", lat: -7.1167, lon: 112.4167 }, { name: "Sidoarjo", lat: -7.4531, lon: 112.7167 }, { name: "Kediri", lat: -7.8167, lon: 112.0167 }, { name: "Mojokerto", lat: -7.4705, lon: 112.4401 }, { name: "Surabaya", lat: -7.2575, lon: 112.7521 }, { name: "Madura", lat: -7.0167, lon: 113.3333 }, { name: "Nganjuk", lat: -7.6, lon: 111.9 }, { name: "Bojonegoro", lat: -7.15, lon: 111.8833 }, { name: "Tuban", lat: -6.9, lon: 112.05 }];
     const map = L.map('map').setView([-7.5, 112.5], 8);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB'
-    }).addTo(map);
-    cities.forEach(city => {
-      L.marker([city.lat, city.lon]).addTo(map).bindPopup(`<b>${city.name}</b><br>Kami melayani kota ini. Hubungi WA untuk info lebih lanjut.`);
-    });
-
-    const canvas = document.getElementById('particles-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    for (let i = 0; i < 60; i++) {
-      particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 2.5 + 1, speedX: (Math.random() - 0.5) * 0.4, speedY: (Math.random() - 0.5) * 0.2 });
-    }
-    function animateParticles() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(255,255,255,0.6)';
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-      }
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    document.getElementById('shareLocationBtn').addEventListener('click', function () {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          const mapsLink = `https://www.google.com/maps?q=${lat},${lng}`;
-          const waMsg = `Halo Putra Tangkas Semesta, saya butuh bantuan. Lokasi saya: ${mapsLink}. Mohon info layanan & Konsultasi.`;
-          window.open(`https://wa.me/6285748901055?text=${encodeURIComponent(waMsg)}`, '_blank');
-        }, function () {
-          alert("Gagal mendapatkan lokasi. Izinkan akses lokasi atau kirim manual via WA.");
-        });
-      } else {
-        alert("Browser tidak mendukung geolokasi. Silakan kirim lokasi manual.");
-      }
-    });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB' }).addTo(map);
+    cities.forEach(city => L.marker([city.lat, city.lon]).addTo(map).bindPopup(`<b>${city.name}</b><br>Kami melayani kota ini. Hubungi WA untuk info lebih lanjut.`));
+    document.getElementById('shareLocationBtn').addEventListener('click', function () { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(function (position) { const lat = position.coords.latitude, lng = position.coords.longitude, mapsLink = `https://www.google.com/maps?q=${lat},${lng}`, waMsg = `Halo Putra Tangkas Semesta, saya butuh bantuan. Lokasi saya: ${mapsLink}. Mohon info layanan & konsultasi.`; window.open(`https://wa.me/6285748901055?text=${encodeURIComponent(waMsg)}`, '_blank'); }, function () { alert("Gagal mendapatkan lokasi. Izinkan akses lokasi atau kirim manual via WA."); }); } else { alert("Browser tidak mendukung geolokasi. Silakan kirim lokasi manual."); } });
   </script>
 </body>
 
